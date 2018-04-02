@@ -18,6 +18,16 @@ config BR2_PACKAGE_LLVM
 
 	  http://llvm.org
 
+if BR2_PACKAGE_LLVM
+
+config BR2_PACKAGE_LLVM_AMDGPU
+	bool "AMDGPU backend"
+	help
+	  Build AMDGPU target. Select this option if you are going
+	  to install mesa3d with llvm and use Gallium Radeon driver.
+
+endif
+
 comment "llvm needs a toolchain w/ gcc >= 4.8, host gcc >= 4.8"
 	depends on !BR2_HOST_GCC_AT_LEAST_4_8 \
 		|| !BR2_TOOLCHAIN_GCC_AT_LEAST_4_8
