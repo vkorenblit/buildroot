@@ -1,0 +1,9 @@
+config BR2_PACKAGE_CLANG
+	bool "clang"
+	depends on BR2_PACKAGE_LLVM_ARCH_SUPPORTS
+	select BR2_PACKAGE_LLVM
+	help
+	  Clang is a C/C++, Objective C/C++ and OpenCL C front-end
+	  for the LLVM compiler.
+
+	  http://clang.llvm.org
