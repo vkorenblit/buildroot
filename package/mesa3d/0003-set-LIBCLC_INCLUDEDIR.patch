@@ -1,0 +1,26 @@
+From b1fdc84dff0f4c232eb58dded1dd6e3408ea5630 Mon Sep 17 00:00:00 2001
+From: Valentin Korenblit <valentin.korenblit@smile.fr>
+Date: Fri, 4 May 2018 10:24:58 +0200
+Subject: [PATCH] set LIBCLC_INCLUDEDIR
+
+Signed-off-by: Valentin Korenblit <valentin.korenblit@smile.fr>
+---
+ configure.ac | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/configure.ac b/configure.ac
+index a6a521794e..9e1dfef06f 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -2327,7 +2327,7 @@ if test "x$enable_opencl" = xyes; then
+                     PKG_CONFIG_PATH environment variable.
+                     By default libclc.pc is installed to /usr/local/share/pkgconfig/])
+     else
+-        LIBCLC_INCLUDEDIR=`$PKG_CONFIG --variable=includedir libclc`
++        LIBCLC_INCLUDEDIR="/usr/share"
+         LIBCLC_LIBEXECDIR=`$PKG_CONFIG --variable=libexecdir libclc`
+         AC_SUBST([LIBCLC_INCLUDEDIR])
+         AC_SUBST([LIBCLC_LIBEXECDIR])
+-- 
+2.14.3
+
