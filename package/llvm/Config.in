@@ -2,9 +2,11 @@ config BR2_PACKAGE_LLVM_ARCH_SUPPORTS
 	bool
 	default y if BR2_i386
 	default y if BR2_x86_64
+	default y if BR2_arm || BR2_armeb
 
 config BR2_PACKAGE_LLVM_TARGET_ARCH
 	string
+	default "ARM" if BR2_arm || BR2_armeb
 	default "X86" if BR2_i386 || BR2_x86_64
 
 config BR2_PACKAGE_LLVM
