@@ -1911,6 +1911,7 @@ F:	package/dropwatch/
 F:	package/tstools/
 
 N:	Valentin Korenblit <valentin.korenblit@smile.fr>
+F:	package/clang/
 F:	package/llvm/
 
 N:	Vanya Sergeev <vsergeev@gmail.com>
