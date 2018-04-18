@@ -1,0 +1,5 @@
+config BR2_PACKAGE_VC4CLSTDLIB
+	bool "vc4clstdlib"
+	help
+	  VC4CLStdLib contains the VC4CL implementation of the OpenCL
+	  standard-library and is required to build the VC4C compiler.

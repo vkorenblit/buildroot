@@ -1,0 +1,26 @@
+From 566c4df9c6a99bd4b6d48a4f95f6e41aee6d3046 Mon Sep 17 00:00:00 2001
+From: Valentin Korenblit <valentin.korenblit@smile.fr>
+Date: Mon, 16 Apr 2018 13:22:57 +0200
+Subject: [PATCH] Install headers to /usr/local/include
+
+Signed-off-by: Valentin Korenblit <valentin.korenblit@smile.fr>
+---
+ CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 2c4e86f..901645f 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -22,7 +22,7 @@ set_target_properties(VC4CLStdLib PROPERTIES LINKER_LANGUAGE C)
+ # Adds the public headers to the target, so they are exported
+ target_include_directories(VC4CLStdLib PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>  $<INSTALL_INTERFACE:include/vc4cl-stdlib>)
+ # Creates the install target for the headers
+-install(DIRECTORY "${PROJECT_SOURCE_DIR}/include/" DESTINATION include/vc4cl-stdlib FILES_MATCHING PATTERN "*.h")
++install(DIRECTORY "${PROJECT_SOURCE_DIR}/include/" DESTINATION local/include/vc4cl-stdlib FILES_MATCHING PATTERN "*.h")
+ # Adds custom uninstall command
+ add_custom_target(uninstall "${CMAKE_COMMAND}" -P "cmake_uninstall.cmake")
+ 
+-- 
+2.14.3
+
