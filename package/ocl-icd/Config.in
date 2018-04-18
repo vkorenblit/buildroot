@@ -1,0 +1,5 @@
+config BR2_PACKAGE_OCL_ICD
+	bool "ocl-icd"
+	help
+	  This package aims at creating an Open Source alternative to
+	  vendor specific OpenCL ICD loaders.
