@@ -1,0 +1,16 @@
+config BR2_PACKAGE_VC4CL
+	bool "vc4cl"
+	depends on BR2_PACKAGE_LLVM_ARCH_SUPPORTS
+	depends on BR2_HOST_GCC_AT_LEAST_4_8
+	depends on BR2_TOOLCHAIN_GCC_AT_LEAST_4_9 # C++14
+	depends on BR2_TOOLCHAIN_HAS_THREADS
+	depends on BR2_INSTALL_LIBSTDCPP
+	depends on !BR2_TOOLCHAIN_HAS_GCC_BUG_64735 # std::shared_future
+	depends on !BR2_STATIC_LIBS
+	depends on BR2_USE_WCHAR # std::wstring
+	depends on BR2_arm # rpi-userland
+	select BR2_PACKAGE_OCL_ICD
+	select BR2_PACKAGE_VC4C
+	help
+	  VC4CL is an implementation of the OpenCL 1.2 (EMBEDDED PROFILE)
+	  standard for the VideoCore IV GPU (found in all Raspberry Pi models).

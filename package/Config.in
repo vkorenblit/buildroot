@@ -304,6 +304,7 @@ comment "Graphic libraries"
 	source "package/sdl2_net/Config.in"
 	source "package/sdl2_ttf/Config.in"
 	source "package/vc4c/Config.in"
+	source "package/vc4cl/Config.in"
 	source "package/vc4clstdlib/Config.in"
 
 comment "Other GUIs"
