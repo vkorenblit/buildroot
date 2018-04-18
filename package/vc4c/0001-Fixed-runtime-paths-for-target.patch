@@ -1,0 +1,39 @@
+From 4d71238659681aa207dfcf5a2fffd720a7ee8fa8 Mon Sep 17 00:00:00 2001
+From: Valentin Korenblit <valentin.korenblit@smile.fr>
+Date: Wed, 18 Apr 2018 09:51:15 +0200
+Subject: [PATCH] Fixed runtime paths for target
+
+Signed-off-by: Valentin Korenblit <valentin.korenblit@smile.fr>
+---
+ src/CMakeLists.txt | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index 43982e8..1fe903a 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -7,8 +7,8 @@ add_executable( VC4C main.cpp concepts.h)
+ set(VC4C_LIBRARY_NAME VC4CC)
+ set(VC4C_PROGRAM_NAME VC4C)
+ 
+-target_compile_definitions(${VC4C_LIBRARY_NAME} PRIVATE VC4C_VERSION="${PROJECT_VERSION}" VC4CL_STDLIB_HEADER="${VC4CL_STDLIB_HEADER}")
+-target_compile_definitions(${VC4C_PROGRAM_NAME} PRIVATE VC4C_VERSION="${PROJECT_VERSION}" VC4CL_STDLIB_HEADER="${VC4CL_STDLIB_HEADER}")
++target_compile_definitions(${VC4C_LIBRARY_NAME} PRIVATE VC4C_VERSION="${PROJECT_VERSION}" VC4CL_STDLIB_HEADER="/usr/local/include/vc4cl-stdlib/VC4CLStdLib.h.pch")
++target_compile_definitions(${VC4C_PROGRAM_NAME} PRIVATE VC4C_VERSION="${PROJECT_VERSION}" VC4CL_STDLIB_HEADER="/usr/local/include/vc4cl-stdlib/VC4CLStdLib.h.pch")
+ 
+ # append usage of C++ to compiler flags, also optimize for speed and enable all warnings
+ set(VC4C_ENABLED_WARNINGS -Wall -Wextra -Wold-style-cast -Wno-unused-parameter -Wno-missing-field-initializers -Wno-write-strings)
+@@ -26,8 +26,8 @@ if(BUILD_DEBUG)
+ 	target_compile_definitions(${VC4C_PROGRAM_NAME} PRIVATE DEBUG_MODE=1)
+ endif(BUILD_DEBUG)
+ if(CLANG_FOUND)
+-	target_compile_definitions(${VC4C_LIBRARY_NAME} PRIVATE CLANG_PATH="${CLANG_FOUND}")
+-	target_compile_definitions(${VC4C_PROGRAM_NAME} PRIVATE CLANG_PATH="${CLANG_FOUND}")
++	target_compile_definitions(${VC4C_LIBRARY_NAME} PRIVATE CLANG_PATH="/usr/bin/clang")
++	target_compile_definitions(${VC4C_PROGRAM_NAME} PRIVATE CLANG_PATH="/usr/bin/clang")
+ endif(CLANG_FOUND)
+ if(SPIRV_CLANG_FOUND)
+ 	target_compile_definitions(${VC4C_LIBRARY_NAME} PRIVATE SPIRV_CLANG_PATH="${SPIRV_CLANG_FOUND}")
+-- 
+2.14.3
+
