@@ -122,10 +122,9 @@ LLVM_CONF_OPTS += -DLLVM_ENABLE_THREADS=ON
 
 # Enable optional host-zlib support for LLVM Machine Code (llvm-mc) to add
 # compression/uncompression capabilities.
-# Not needed on the target.
 HOST_LLVM_CONF_OPTS += -DLLVM_ENABLE_ZLIB=ON
 HOST_LLVM_DEPENDENCIES += host-zlib
-LLVM_CONF_OPTS += -DLLVM_ENABLE_ZLIB=OFF
+LLVM_CONF_OPTS += -DLLVM_ENABLE_ZLIB=ON
 
 # We don't use llvm for static only build, so enable PIC
 HOST_LLVM_CONF_OPTS += -DLLVM_ENABLE_PIC=ON
