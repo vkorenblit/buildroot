@@ -1,0 +1,4 @@
+config BR2_PACKAGE_EASYCL
+	bool "easycl"
+	help
+	  Easy to run kernels using OpenCL
